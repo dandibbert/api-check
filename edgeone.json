@@ -1,7 +1,7 @@
 {
   "name": "api-check",
   "nodeVersion": "22.11.0",
-  "installCommand": "echo 'UTC time:' && date -u && yarn config get registry && yarn install --frozen-lockfile --network-timeout 600000 --verbose",
+  "installCommand": "yarn config get registry && yarn install --frozen-lockfile --network-timeout 600000 --verbose",
   "buildCommand": "yarn build",
   "outputDirectory": "dist"
 }
