@@ -1,0 +1,7 @@
+{
+  "name": "api-check",
+  "nodeVersion": "22.11.0",
+  "installCommand": "yarn install --frozen-lockfile --network-timeout 600000",
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist"
+}
