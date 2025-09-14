@@ -1,7 +1,7 @@
 {
   "name": "api-check",
   "nodeVersion": "22.11.0",
-  "installCommand": "sed -E -i 's#https://r(2)?\\.cnpmjs\\.org#https://registry.npmjs.org#g' yarn.lock || true && npm config set registry https://registry.npmjs.org && yarn config set registry https://registry.npmjs.org && env -u NPM_CONFIG_REGISTRY -u npm_config_registry -u YARN_REGISTRY yarn install --frozen-lockfile --network-timeout 600000 --verbose",
+  "installCommand": "set -e; if [ -f yarn.lock ]; then sed -i \"s#https://r.cnpmjs.org#https://registry.npmjs.org#g; s#https://r2.cnpmjs.org#https://registry.npmjs.org#g\" yarn.lock; fi; npm config set registry https://registry.npmjs.org; yarn config set registry https://registry.npmjs.org; env -u NPM_CONFIG_REGISTRY -u npm_config_registry -u YARN_REGISTRY -u yarn_registry yarn install --frozen-lockfile --network-timeout 600000 --verbose",
   "buildCommand": "yarn build",
   "outputDirectory": "dist"
 }
